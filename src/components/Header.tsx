@@ -10,7 +10,7 @@ export default function Header() {
     <header className="w-full py-4 px-6 md:px-24 bg-white text-gray-900 shadow-md sticky top-0 z-50">
       <div className="flex justify-between items-center">
         {/* Logo / Name */}
-        <div className="text-2xl font-bold tracking-tight">YourName</div>
+        <div className="text-2xl font-bold tracking-tight">Vijay Varma</div>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex space-x-6 text-sm font-medium">
