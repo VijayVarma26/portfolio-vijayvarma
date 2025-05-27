@@ -1,33 +1,42 @@
-"use client";
-
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { Menu, X } from "lucide-react"; // Optional icons if using lucide
 
 export default function Header() {
-  return (
-    <motion.header
-      className="text-center py-16 px-6 md:px-0"
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-    >
-      <h1 className="text-5xl md:text-6xl font-serif text-gray-900 tracking-wide mb-4">
-        Vijay Varma
-      </h1>
-      <p className="text-lg md:text-xl text-gray-600">
-        Data Engineer · LLM Automation Architect · Cloud Native Builder
-      </p>
+  const [isOpen, setIsOpen] = useState(false);
 
-      <div className="flex justify-center gap-4 mt-8 flex-wrap">
-        <a href="mailto:varmavijay2021@gmail.com" className="btn-outline text-sm">
-          Contact
-        </a>
-        <a href="https://linkedin.com/in/vijayvarma-de" target="_blank" className="btn-outline text-sm">
-          LinkedIn
-        </a>
-        <a href="https://github.com/VijayVarma26" target="_blank" className="btn-outline text-sm">
-          GitHub
-        </a>
+  const toggleMenu = () => setIsOpen(!isOpen);
+
+  return (
+    <header className="w-full py-4 px-6 md:px-24 bg-white text-gray-900 shadow-md sticky top-0 z-50">
+      <div className="flex justify-between items-center">
+        {/* Logo / Name */}
+        <div className="text-2xl font-bold tracking-tight">YourName</div>
+
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex space-x-6 text-sm font-medium">
+          <a href="#about" className="hover:text-blue-600 transition">About</a>
+          <a href="#skills" className="hover:text-blue-600 transition">Skills</a>
+          <a href="#projects" className="hover:text-blue-600 transition">Projects</a>
+          <a href="#contact" className="hover:text-blue-600 transition">Contact</a>
+        </nav>
+
+        {/* Mobile Menu Icon */}
+        <div className="md:hidden">
+          <button onClick={toggleMenu}>
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
       </div>
-    </motion.header>
+
+      {/* Mobile Nav Links */}
+      {isOpen && (
+        <div className="md:hidden mt-4 space-y-3 text-sm font-medium">
+          <a href="#about" className="block hover:text-blue-600">About</a>
+          <a href="#skills" className="block hover:text-blue-600">Skills</a>
+          <a href="#projects" className="block hover:text-blue-600">Projects</a>
+          <a href="#contact" className="block hover:text-blue-600">Contact</a>
+        </div>
+      )}
+    </header>
   );
 }
