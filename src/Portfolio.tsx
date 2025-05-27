@@ -9,7 +9,7 @@ import Footer from "./components/Footer";
 
 export default function Portfolio() {
   return (
-    <main className="bg-gradient-to-b from-[#1c1c1e] to-[#121214] text-gray-200 font-light min-h-screen px-6 md:px-24 py-16">
+    <main className="bg-gradient-to-b from-white to-[#f3f4f6] text-gray-800 font-light min-h-screen px-6 md:px-24 py-16">
       <Header />
       <About />
       <Skills />

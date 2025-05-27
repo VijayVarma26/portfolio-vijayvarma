@@ -10,10 +10,10 @@ export default function Header() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <h1 className="text-5xl md:text-6xl font-serif text-white tracking-wide mb-4">
+      <h1 className="text-5xl md:text-6xl font-serif text-gray-900 tracking-wide mb-4">
         Vijay Varma
       </h1>
-      <p className="text-lg md:text-xl text-gray-400">
+      <p className="text-lg md:text-xl text-gray-600">
         Data Engineer · LLM Automation Architect · Cloud Native Builder
       </p>
 
