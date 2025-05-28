@@ -18,7 +18,6 @@ import {
   SiMysql,
   SiHive,
   SiGithub,
-  SiPowerbi,
 } from "react-icons/si";
 
 import { motion } from "framer-motion";
