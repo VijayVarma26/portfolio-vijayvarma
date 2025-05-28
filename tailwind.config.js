@@ -6,6 +6,7 @@ module.exports = {
         sans: ['Inter', 'sans-serif'],
         serif: ['Playfair Display', 'serif'],
       },
+      darkMode: 'class', // or 'media'
     },
   },
   plugins: [],
