@@ -1,6 +1,11 @@
 import { FaPython, FaJava, FaDocker } from "react-icons/fa";
-import { SiJavascript, SiAzuredevops, SiApachespark, SiFastapi, SiDatabricks } from "react-icons/si";
+import { SiJavascript, SiApachespark, SiFastapi, SiDatabricks } from "react-icons/si";
 import { GrMysql } from "react-icons/gr";
+import { FaCloud } from "react-icons/fa";
+import { motion } from "framer-motion";
+
+
+
 
 const categorizedSkills = {
   Languages: [
@@ -15,7 +20,7 @@ const categorizedSkills = {
     { name: "Docker", icon: <FaDocker /> },
   ],
   "Cloud & Big Data": [
-    { name: "Azure", icon: <SiAzuredevops /> },
+    { name: "Azure", icon: <FaCloud /> },
     { name: "Databricks", icon: <SiDatabricks /> },
   ],
 };
