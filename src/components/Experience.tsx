@@ -4,43 +4,69 @@ const experiences = [
   {
     role: "Data Engineer",
     company: "ION Analytics",
-    dates: "Jan 2022 - Present",
+    dates: "Jan 2022 – Present",
     responsibilities: [
-      "Built scalable ETL pipelines using Azure and PySpark.",
-      "Developed FastAPI microservices integrated with LLM agents.",
-      "Engineered multi-tenant Databricks orchestration across environments.",
+      "Led design of scalable data pipelines using Azure Databricks, PySpark, and Data Factory.",
+      "Integrated LLMs and AI automation for IPO, KYC, and reporting workflows.",
+      "Built FastAPI microservices for data ingestion, transformation, and validation.",
+      "Migrated legacy systems to Azure Delta Lake; unified reporting across AWS, MariaDB, and SharePoint.",
+      "Collaborated with DevOps to implement CI/CD pipelines and system monitoring.",
     ],
   },
-  // Add more experiences here if needed
+  {
+    role: "Technology Analyst",
+    company: "Infosys",
+    dates: "June 2018 – Jan 2022",
+    responsibilities: [
+      "Developed ETL workflows using Python, SQL, HiveQL, and Apache Sqoop.",
+      "Implemented batch data pipelines using Hadoop, Hive, and Oozie.",
+      "Built RESTful APIs and dashboards with Flask and JavaScript for real-time insights.",
+      "Migrated structured and unstructured data to cloud platforms to enhance accessibility and compliance.",
+    ],
+  },
 ];
 
 export default function Experience() {
   return (
     <motion.section
-      className="section"
+      id="experience"
+      className="section py-16 px-6 md:px-24 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100"
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 0.5 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ delay: 0.3 }}
+      viewport={{ once: true }}
     >
-      <h2 className="section-title">💼 Experience</h2>
-      <div className="space-y-8">
-        {experiences.map(({ role, company, dates, responsibilities }) => (
-          <div
-            key={company + role}
-            className="bg-[#202024] p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
-          >
-            <div className="flex justify-between items-center mb-3">
-              <h3 className="text-white text-lg font-semibold">{company} – {role}</h3>
-              <span className="text-gray-500 text-sm">{dates}</span>
-            </div>
-            <ul className="list-disc text-gray-400 space-y-2 pl-5 text-sm">
-              {responsibilities.map((item, idx) => (
-                <li key={idx}>{item}</li>
-              ))}
-            </ul>
-          </div>
-        ))}
+      <h2 className="text-3xl font-bold mb-8 text-blue-600 dark:text-cyan-400">
+        💼 Experience
+      </h2>
+
+      <div className="space-y-10">
+  {experiences.map(({ role, company, dates, responsibilities }, index) => (
+    <motion.div
+      key={`${company}-${role}`}
+      initial={{ opacity: 0, x: -50 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.3 }}
+      whileHover={{ scale: 1.01 }}
+      className="bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+    >
+      <div className="flex justify-between items-start mb-3 flex-col md:flex-row">
+        <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+          {company} — {role}
+        </h3>
+        <span className="text-sm text-gray-500 dark:text-gray-400 mt-1 md:mt-0">
+          {dates}
+        </span>
       </div>
+      <ul className="list-disc list-inside space-y-2 text-sm text-gray-700 dark:text-gray-300">
+        {responsibilities.map((item, idx) => (
+          <li key={idx}>{item}</li>
+        ))}
+      </ul>
+    </motion.div>
+  ))}
+</div>
+
     </motion.section>
   );
 }
