@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { FaPython, FaJava, FaDocker } from "react-icons/fa";
 import { SiJavascript, SiAzuredevops, SiApachespark, SiFastapi, SiDatabricks } from "react-icons/si";
 import { GrMysql } from "react-icons/gr";
