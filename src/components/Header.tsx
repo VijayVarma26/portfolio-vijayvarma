@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import React from "react";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
