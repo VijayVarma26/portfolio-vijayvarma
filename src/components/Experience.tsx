@@ -36,37 +36,41 @@ export default function Experience() {
       transition={{ delay: 0.3 }}
       viewport={{ once: true }}
     >
-      <h2 className="text-3xl font-bold mb-8 text-blue-600 dark:text-cyan-400">
+      <h2 className="text-3xl font-bold mb-12 text-blue-600 dark:text-cyan-400">
         💼 Experience
       </h2>
 
-      <div className="space-y-10">
-  {experiences.map(({ role, company, dates, responsibilities }, index) => (
-    <motion.div
-      key={`${company}-${role}`}
-      initial={{ opacity: 0, x: -50 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.3 }}
-      whileHover={{ scale: 1.01 }}
-      className="bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
-    >
-      <div className="flex justify-between items-start mb-3 flex-col md:flex-row">
-        <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-          {company} — {role}
-        </h3>
-        <span className="text-sm text-gray-500 dark:text-gray-400 mt-1 md:mt-0">
-          {dates}
-        </span>
-      </div>
-      <ul className="list-disc list-inside space-y-2 text-sm text-gray-700 dark:text-gray-300">
-        {responsibilities.map((item, idx) => (
-          <li key={idx}>{item}</li>
-        ))}
-      </ul>
-    </motion.div>
-  ))}
-</div>
+      <div className="relative border-l-4 border-cyan-400 dark:border-cyan-500 pl-6 space-y-10">
+        {experiences.map(({ role, company, dates, responsibilities }, index) => (
+          <motion.div
+            key={`${company}-${role}`}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.2 }}
+            viewport={{ once: true }}
+            className="relative bg-white/70 dark:bg-gray-800/60 backdrop-blur-sm border border-gray-200 dark:border-gray-700 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+          >
+            {/* Timeline Dot */}
+            <span className="absolute -left-3 top-5 w-4 h-4 bg-cyan-400 dark:bg-cyan-500 rounded-full border-4 border-white dark:border-gray-900 shadow-md" />
 
+            <div className="flex flex-col sm:flex-row sm:justify-between mb-3">
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white">
+                {role} @ <span className="text-blue-600 dark:text-cyan-400">{company}</span>
+              </h3>
+              <span className="text-sm text-gray-500 dark:text-gray-400 mt-1 sm:mt-0">
+                {dates}
+              </span>
+            </div>
+
+            <ul className="list-disc list-inside space-y-2 text-sm text-gray-700 dark:text-gray-300">
+              {responsibilities.map((item, idx) => (
+                <li key={idx}>{item}</li>
+              ))}
+            </ul>
+          </motion.div>
+        ))}
+      </div>
     </motion.section>
+
   );
 }
