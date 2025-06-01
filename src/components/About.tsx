@@ -5,55 +5,71 @@ export default function About() {
   return (
     <section
       id="about"
-      className="section bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 py-16 px-6 md:px-24"
+      className="relative overflow-hidden py-20 px-6 md:px-24 bg-gradient-to-br from-white via-blue-50 to-cyan-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-gray-800 dark:text-gray-100"
     >
-      <div className="grid md:grid-cols-2 gap-10 items-center">
+      {/* Floating Gradient Circles */}
+      <div className="absolute top-[-5rem] left-[-5rem] w-96 h-96 bg-cyan-400 opacity-20 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-[-5rem] right-[-5rem] w-96 h-96 bg-purple-500 opacity-20 rounded-full blur-3xl"></div>
+
+      <div className="grid md:grid-cols-2 gap-14 z-10 relative items-center">
         {/* Profile Image */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="w-full flex justify-center"
+          className="flex justify-center"
         >
-          <img
-            src="/profile.jpg" // Replace with your actual image
-            alt="Vijay Varma"
-            className="w-52 h-52 rounded-full object-cover shadow-lg border-4 border-cyan-400"
-          />
+          <div className="relative group">
+            <img
+              src="/profile.jpg"
+              alt="Vijay Varma"
+              className="w-56 h-56 rounded-full object-cover shadow-2xl border-4 border-cyan-500"
+            />
+            <div className="absolute -inset-1 rounded-full border-2 border-cyan-400 blur-sm opacity-30 group-hover:scale-105 group-hover:opacity-70 transition duration-300"></div>
+          </div>
         </motion.div>
 
-        {/* Bio */}
+        {/* Bio and Highlights */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl font-bold mb-2 text-blue-600 dark:text-cyan-400">
+          <h2 className="text-4xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">
             Hi, I'm Vijay Varma
           </h2>
-          <p className="text-lg mb-4 leading-relaxed">
-            I'm a <span className="font-semibold text-blue-600 dark:text-cyan-400">Data Engineer</span> with 7+ years of experience designing scalable data pipelines, cloud-native systems, and AI-integrated workflows.
+          <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-4">
+            I’m a <span className="font-semibold text-blue-600 dark:text-cyan-400">Data Engineer</span> with 7+ years of experience crafting robust, cloud-native data pipelines and intelligent automation workflows powered by AI and LLMs.
           </p>
-          <p className="text-gray-700 dark:text-gray-300">
-            I specialize in automating and optimizing data processes across financial research platforms using technologies like Azure, Databricks, and Promptflow. Passionate about building production-grade data infrastructure with modern DevOps, LLMs, and a problem-solving mindset.
+          <p className="text-gray-600 dark:text-gray-400 mb-6">
+            I’ve built scalable solutions in the finance research space, integrating tools like Azure Databricks, Promptflow, and Data Factory to unlock insights and streamline operations through automation.
           </p>
 
           {/* Highlights */}
-          <div className="mt-6 grid grid-cols-2 gap-4 text-sm text-gray-800 dark:text-gray-300">
-            <div>
-              <span className="font-medium">Experience:</span> 7+ years
-            </div>
-            <div>
-              <span className="font-medium">Specialties:</span> LLM Automation, Cloud ETL
-            </div>
-            <div>
-              <span className="font-medium">Cloud:</span> Azure (Databricks, Data Factory)
-            </div>
-            <div>
-              <span className="font-medium">Focus:</span> AI-Driven Data Solutions
-            </div>
+          <div className="grid grid-cols-2 gap-4 text-sm mt-4">
+            {[
+              ["Experience", "7+ years"],
+              ["Specialties", "LLM Automation, Cloud ETL"],
+              ["Cloud", "Azure, Databricks, Data Factory"],
+              ["Focus", "AI-Driven Data Solutions"],
+            ].map(([label, value], index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 + index * 0.1 }}
+                className="p-4 bg-white/60 dark:bg-white/10 backdrop-blur-md border border-white/20 rounded-xl shadow-sm"
+              >
+                <div className="text-xs uppercase text-gray-500 dark:text-gray-400 font-medium tracking-wide">
+                  {label}
+                </div>
+                <div className="text-sm font-semibold text-gray-900 dark:text-gray-100">
+                  {value}
+                </div>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
       </div>
