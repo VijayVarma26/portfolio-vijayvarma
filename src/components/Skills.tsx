@@ -85,7 +85,7 @@ export default function Skills() {
                 key={skill.name}
                 whileHover={{ y: -4, scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className="group relative overflow-hidden flex items-center gap-3 p-4 rounded-2xl bg-white/60 dark:bg-white/10 backdrop-blur-md border border-gray-200/50 dark:border-white/10 shadow-md hover:shadow-xl hover:border-cyan-400 dark:hover:border-cyan-500 transition duration-300"
+                className="group relative overflow-hidden flex items-center gap-2 px-3 py-2 rounded-xl bg-white/60 dark:bg-white/10 backdrop-blur-md border border-gray-200/50 dark:border-white/10 shadow-md hover:shadow-xl hover:border-cyan-400 dark:hover:border-cyan-500 transition duration-300"
               >
                 {/* Glowing Icon Background */}
                 <div className="absolute -left-4 -top-4 w-20 h-20 bg-cyan-300/10 dark:bg-cyan-400/10 blur-2xl rounded-full group-hover:animate-pulse z-0"></div>
