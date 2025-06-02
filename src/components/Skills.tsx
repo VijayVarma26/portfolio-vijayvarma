@@ -78,7 +78,8 @@ export default function Skills() {
             <h3 className="text-2xl font-semibold text-gray-700 dark:text-gray-300 mb-6">
               {category}
             </h3>
-            <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5 sm:gap-6 lg:gap-8">
+            <ul className="flex flex-wrap gap-3 sm:gap-4 md:gap-5 lg:gap-6">
+
 
               {skills.map((skill) => (
                 <motion.li
