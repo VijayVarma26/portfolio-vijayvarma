@@ -8,7 +8,7 @@ const projects = [
       "Built an LLM-based web scraper that generated over 110K high-quality leads, increasing customer reach by 12% in one quarter.",
     image: "/images/web-crawler.jpg",
     details:
-      "This project utilized a hybrid of Python-based scrapers and GPT-4 Turbo prompts to dynamically extract, clean, and store structured leads from web sources. Hosted in Azure Functions with CosmosDB and vector embeddings for contextual filtering.",
+      "This project combined Python scraping tools like Selenium with GPT-4 Turbo via Promptflow to identify, extract, and filter high-potential leads from global company websites and databases. Results were stored in Azure CosmosDB and vectorized using OpenAI embeddings for semantic deduplication. It also featured a React dashboard for QA teams to validate and download lead segments. Hosted on AKS with periodic updates via CRON-based jobs.",
   },
   {
     title: "LLM-Powered IPO Deal Automation",
@@ -16,7 +16,7 @@ const projects = [
       "Automated ECM IPO deal creation using GPT-4 Turbo, reducing processing time from 2.5 hours to under 3 minutes.",
     image: "/images/ipo-automation.jpg",
     details:
-      "Used Promptflow pipelines integrated with Azure Blob Triggers to convert unstructured emails and PDFs into structured IPO deal entries with 97% accuracy.",
+      "Developed an AI-driven automation pipeline that parsed IPO documents (PDFs, emails) using Promptflow and GPT-4. Extracted fields were normalized using Pydantic schemas, validated against internal taxonomies, and directly published to Dealogic via RESTful microservices hosted on Azure Kubernetes Service (AKS). Implemented a PostgreSQL + RAG-based fallback system for handling edge cases and token overflows. This eliminated manual input across 4 departments.",
   },
   {
     title: "M&A League Table Sync Pipeline",
@@ -24,7 +24,7 @@ const projects = [
       "Engineered a data pipeline to validate and sync 1.25M M&A deals, enabling recognition for 2M+ advisors and improving League Table accuracy.",
     image: "/images/league-table.jpg",
     details:
-      "Built using PySpark and Delta Lake. Leveraged validation layers across MariaDB and SharePoint sources with CI/CD via GitHub Actions.",
+      "Built using PySpark on Databricks and Delta Lake, this pipeline reconciled deal data between Mergermarket and Dealogic. Cross-validated 15+ fields including financial metrics, timestamps, and advisor roles. Added schema drift monitoring, hash-based change detection, and version control for rollback. Final insights powered downstream Tableau dashboards and auto-generated league position summaries for each region and sector.",
   },
   {
     title: "Automated PEP & Sanctions Pipeline",
@@ -32,9 +32,10 @@ const projects = [
       "Scraped 50+ sources to automate KYC updates, saving over 400 manual hours weekly and improving compliance monitoring.",
     image: "/images/pep-sanctions.jpg",
     details:
-      "A FastAPI-based scraper engine, orchestrated via Azure Data Factory, storing data in MongoDB Atlas with alert rules for PEP hits.",
+      "Designed a robust crawler system with 50+ connectors to public data sources (Interpol, SEC, OFAC, EU Parliament, etc.). Used Selenium and BeautifulSoup for scraping, combined with FastAPI to expose results over internal dashboards. Azure Blob Storage housed the raw data, with processed entities stored in MySQL. Alerting system built with App Insights and Logic Apps notified analysts of risky entities in near real-time. This reduced manual intervention by over 90%.",
   },
 ];
+
 
 export default function Projects() {
   const [activeProject, setActiveProject] = useState(null);
