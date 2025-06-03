@@ -60,12 +60,6 @@ export default function Experience() {
                 className="w-10 h-10 object-contain"
               />
             </div>
-
-
-
-
-
-
             {/* Experience Card */}
             <div className="flex-1 bg-white dark:bg-gray-800/80 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg p-8">
               <div className="flex flex-col md:flex-row md:justify-between mb-4">
