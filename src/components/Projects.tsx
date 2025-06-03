@@ -127,33 +127,71 @@ export default function Projects() {
 
         {/* Modal Overlay */}
         {activeProject && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-50 flex items-center justify-center p-6">
-            <div className="bg-white dark:bg-gray-900 rounded-2xl max-w-2xl w-full shadow-xl relative">
-              <button
-                onClick={() => setActiveProject(null)}
-                className="absolute top-4 right-4 text-gray-500 dark:text-gray-300 hover:text-red-500 text-2xl"
+  <div className="fixed inset-0 z-50 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center p-4">
+    <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl max-w-3xl w-full overflow-hidden relative">
+      {/* Close Button */}
+      <button
+        onClick={() => setActiveProject(null)}
+        className="absolute top-4 right-4 text-gray-500 dark:text-gray-300 hover:text-red-500 text-2xl"
+      >
+        &times;
+      </button>
+
+      {/* Header Image */}
+      <img
+        src={activeProject.image}
+        alt={activeProject.title}
+        className="w-full h-64 object-cover rounded-t-2xl"
+      />
+
+      {/* Content */}
+      <div className="p-6 space-y-6">
+        {/* Project Title */}
+        <h3 className="text-2xl font-bold text-blue-600 dark:text-cyan-400">
+          {activeProject.title}
+        </h3>
+
+        {/* Description */}
+        <div>
+          <h4 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-1">
+            📌 Description
+          </h4>
+          <p className="text-sm text-gray-800 dark:text-gray-100 leading-relaxed">
+            {activeProject.description}
+          </p>
+        </div>
+
+        {/* Detailed Highlights */}
+        <div>
+          <h4 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-1">
+            🧩 Project Highlights
+          </h4>
+          <p className="text-sm text-gray-700 dark:text-gray-200 leading-relaxed whitespace-pre-line">
+            {activeProject.details}
+          </p>
+        </div>
+
+        {/* Tech Stack */}
+        <div>
+          <h4 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-1">
+            ⚙️ Tech Stack
+          </h4>
+          <div className="flex flex-wrap gap-2 mt-2">
+            {activeProject.techStack?.map((tech, index) => (
+              <span
+                key={index}
+                className="bg-blue-100 dark:bg-cyan-800 text-blue-800 dark:text-white text-xs font-medium px-3 py-1 rounded-full shadow-sm"
               >
-                &times;
-              </button>
-              <img
-                src={activeProject.image}
-                alt={activeProject.title}
-                className="w-full h-64 object-cover rounded-t-2xl"
-              />
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-2 text-blue-600 dark:text-cyan-400">
-                  {activeProject.title}
-                </h3>
-                <p className="text-gray-700 dark:text-gray-300 text-sm mb-4">
-                  {activeProject.description}
-                </p>
-                <p className="text-gray-800 dark:text-gray-100 text-sm leading-relaxed">
-                  {activeProject.details}
-                </p>
-              </div>
-            </div>
+                {tech}
+              </span>
+            ))}
           </div>
-        )}
+        </div>
+      </div>
+    </div>
+  </div>
+)}
+
       </div>
     </motion.section>
   );
