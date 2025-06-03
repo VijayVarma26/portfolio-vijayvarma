@@ -3,38 +3,78 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
-    title: "AI-Powered Web Crawler",
+    title: "AI-Powered Web Crawler for Lead Generation",
     description:
-      "Built an LLM-based web scraper that generated over 110K high-quality leads, increasing customer reach by 12% in one quarter.",
+      "Developed an LLM-based crawler to extract and generate 110K+ verified business leads, increasing outreach efficiency by 12% in a quarter.",
     image: "/images/web-crawler.jpg",
     details:
-      "This project combined Python scraping tools like Selenium with GPT-4 Turbo via Promptflow to identify, extract, and filter high-potential leads from global company websites and databases. Results were stored in Azure CosmosDB and vectorized using OpenAI embeddings for semantic deduplication. It also featured a React dashboard for QA teams to validate and download lead segments. Hosted on AKS with periodic updates via CRON-based jobs.",
+      "This solution used Python-based scraping combined with GPT-4 Turbo via Promptflow to extract structured lead data from company websites, business directories, and global databases. Leads were filtered using vector similarity (OpenAI embeddings) and scored for quality. All data was stored in CosmosDB, and QA teams could monitor results via a React-based internal dashboard. The system ran on a CRON schedule, orchestrated via AKS and Azure Functions, supporting periodic refresh and deduplication routines.",
+    techStack: [
+      "Python",
+      "Promptflow",
+      "GPT-4 Turbo",
+      "Selenium",
+      "CosmosDB",
+      "OpenAI Embeddings",
+      "Azure Kubernetes Service (AKS)",
+      "React",
+      "Azure Functions",
+    ],
   },
   {
-    title: "LLM-Powered IPO Deal Automation",
+    title: "LLM-Powered ECM IPO Deal Automation",
     description:
-      "Automated ECM IPO deal creation using GPT-4 Turbo, reducing processing time from 2.5 hours to under 3 minutes.",
+      "Reduced IPO deal processing time from 2.5 hours to under 3 minutes using LLM automation integrated with Azure infrastructure.",
     image: "/images/ipo-automation.jpg",
     details:
-      "Developed an AI-driven automation pipeline that parsed IPO documents (PDFs, emails) using Promptflow and GPT-4. Extracted fields were normalized using Pydantic schemas, validated against internal taxonomies, and directly published to Dealogic via RESTful microservices hosted on Azure Kubernetes Service (AKS). Implemented a PostgreSQL + RAG-based fallback system for handling edge cases and token overflows. This eliminated manual input across 4 departments.",
+      "Built a Promptflow-based pipeline to extract structured fields from unstructured ECM IPO documents (emails, PDFs). Used GPT-4 Turbo with robust prompt engineering and schema validation (via Pydantic) to ensure data integrity. The solution pushed extracted data to Dealogic through a FastAPI microservice hosted on AKS. Implemented a RAG-enhanced fallback with PostgreSQL to handle edge cases and model limitations, achieving over 97% data accuracy across 500+ real-world IPOs.",
+    techStack: [
+      "Python",
+      "Promptflow",
+      "GPT-4 Turbo",
+      "Pydantic",
+      "PostgreSQL",
+      "FastAPI",
+      "AKS (Azure Kubernetes Service)",
+      "RAG (Retrieval-Augmented Generation)",
+    ],
   },
   {
     title: "M&A League Table Sync Pipeline",
     description:
-      "Engineered a data pipeline to validate and sync 1.25M M&A deals, enabling recognition for 2M+ advisors and improving League Table accuracy.",
+      "Built a high-volume pipeline to reconcile 1.25M+ M&A deals between Mergermarket and Dealogic, improving advisor recognition and report accuracy.",
     image: "/images/league-table.jpg",
     details:
-      "Built using PySpark on Databricks and Delta Lake, this pipeline reconciled deal data between Mergermarket and Dealogic. Cross-validated 15+ fields including financial metrics, timestamps, and advisor roles. Added schema drift monitoring, hash-based change detection, and version control for rollback. Final insights powered downstream Tableau dashboards and auto-generated league position summaries for each region and sector.",
+      "This PySpark-based pipeline was developed on Azure Databricks to align fields across large datasets with financial and deal metadata. Data sources included SharePoint dumps and MariaDB tables. The pipeline added multi-level validation logic, schema reconciliation, and delta-based change tracking. League Table positions were updated live, improving visibility for 2M+ advisors and 4.3M+ individuals. The solution integrated CI/CD using GitHub Actions and published data to dashboards and reports consumed company-wide.",
+    techStack: [
+      "PySpark",
+      "Azure Databricks",
+      "Delta Lake",
+      "MariaDB",
+      "SharePoint",
+      "SQL",
+      "GitHub Actions",
+    ],
   },
   {
-    title: "Automated PEP & Sanctions Pipeline",
+    title: "Automated PEP & Sanctions Data Pipeline",
     description:
-      "Scraped 50+ sources to automate KYC updates, saving over 400 manual hours weekly and improving compliance monitoring.",
+      "Scraped 50+ regulatory and watchlist sources globally to automate KYC updates and improve real-time risk monitoring.",
     image: "/images/pep-sanctions.jpg",
     details:
-      "Designed a robust crawler system with 50+ connectors to public data sources (Interpol, SEC, OFAC, EU Parliament, etc.). Used Selenium and BeautifulSoup for scraping, combined with FastAPI to expose results over internal dashboards. Azure Blob Storage housed the raw data, with processed entities stored in MySQL. Alerting system built with App Insights and Logic Apps notified analysts of risky entities in near real-time. This reduced manual intervention by over 90%.",
+      "Designed and deployed a distributed web crawler system to aggregate data from sources such as OFAC, Interpol, SEC, and EU Sanctions lists. Used Selenium and Python scripts within Azure Databricks to perform scraping, cleaning, and enrichment. The processed data was stored in MySQL and blob storage, while the front-end alert system used Azure App Insights and Logic Apps to notify compliance analysts of critical matches. Reduced manual KYC review effort by 400+ hours per week and improved compliance latency.",
+    techStack: [
+      "Python",
+      "Selenium",
+      "Azure Databricks",
+      "MySQL",
+      "Azure Blob Storage",
+      "Azure App Insights",
+      "Azure Logic Apps",
+    ],
   },
 ];
+
 
 
 export default function Projects() {
