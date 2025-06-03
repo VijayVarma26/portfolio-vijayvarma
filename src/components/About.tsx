@@ -23,7 +23,8 @@ export default function About() {
             <img
               src="/profile.jpg"
               onError={(e) => {
-                e.currentTarget.src = "https://via.placeholder.com/220x220.png?text=Your+Photo";
+                e.currentTarget.src =
+                  "https://via.placeholder.com/220x220.png?text=Your+Photo";
               }}
               alt="Vijay Varma"
               className="w-52 h-52 md:w-60 md:h-60 rounded-2xl object-cover shadow-xl border-4 border-cyan-500"
@@ -43,15 +44,23 @@ export default function About() {
             Meet Vijay Varma
           </h2>
           <h3 className="text-lg font-medium text-gray-700 dark:text-gray-300">
-            Data Engineer • Cloud Specialist • AI Integrator
+            Data Engineer • AI Integrator • Full Stack Developer
           </h3>
 
           <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed">
-            I'm a seasoned <span className="font-semibold text-blue-600 dark:text-cyan-400">Data Engineer</span> with over 7 years of experience architecting scalable, cloud-native data platforms and automation pipelines.
+            I'm a <span className="font-semibold text-blue-600 dark:text-cyan-400">Data Engineer and Full Stack Developer</span> with 7+ years of experience solving real-world challenges at the intersection of data, cloud, and AI.
           </p>
 
           <p className="text-base text-gray-600 dark:text-gray-400">
-            I specialize in delivering intelligent solutions in the financial research domain—leveraging tools like Azure Databricks, Promptflow, and Data Factory to power LLM-based automation and drive data-driven decisions.
+            At <span className="font-medium text-blue-600 dark:text-cyan-400">ION Analytics</span>, I craft intelligent pipelines and automation solutions that transform how financial data is processed and delivered. My toolbox includes <span className="font-medium">Azure Databricks, PySpark, Promptflow, GPT-4, and FastAPI</span>.
+          </p>
+
+          <p className="text-base text-gray-600 dark:text-gray-400">
+            I also bring strong skills as a <span className="font-semibold">Full Stack Developer</span>, building sleek and responsive apps using the <span className="font-medium">MERN stack</span> (MongoDB, Express.js, React, Node.js). Whether it’s backend data orchestration or intuitive frontend experiences, I love bringing smart systems to life.
+          </p>
+
+          <p className="text-base text-gray-600 dark:text-gray-400">
+            My projects have included automating IPO deal creation in under 3 minutes, syncing millions of M&A records, and saving 400+ manual hours weekly via intelligent KYC pipelines. I thrive on solving hard problems and pushing boundaries with tech.
           </p>
         </motion.div>
       </div>
