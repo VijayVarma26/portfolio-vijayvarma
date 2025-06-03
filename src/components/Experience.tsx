@@ -7,28 +7,40 @@ const experiences = [
   {
     logo: IONLogo,
     company: "ION Analytics",
-    role: "Senior Data Engineer",
+    role: "Data Engineer",
     dates: "Jan 2022 – Present",
     responsibilities: [
-      "Built and managed 15+ robust ETL pipelines using Databricks and PySpark, processing over 120M records monthly.",
-      "Automated ECM IPO deal entries via GPT-4 and Promptflow, reducing processing time by 98%.",
-      "Led LLM-based web crawler project yielding 110K+ leads with 12% revenue uplift.",
-      "Collaborated with cross-functional teams to deliver AI-integrated data products for M&A and capital markets.",
+      "Designed and deployed 15+ scalable, production-grade data pipelines using Azure Databricks, PySpark, and ADF, processing over 120M records monthly.",
+      "Built AI-driven microservices using FastAPI and GPT-4 for IPO deal creation, cutting manual effort by 95% and reducing processing time from 2.5 hours to 3 minutes.",
+      "Led the development of a web crawler powered by LLM and Promptflow, generating 110K+ high-value leads and boosting client engagement by 12%.",
+      "Engineered an M&A sync pipeline reconciling 1.25M+ deal records across Mergermarket and Dealogic, impacting 2M+ advisors and 4.3M+ individuals.",
+      "Automated real-time KYC compliance using a FastAPI + Selenium scraping engine for 50+ PEP/sanctions sources, saving 400+ hours/week.",
+      "Developed RAG-based solutions in PostgreSQL to overcome LLM token limitations in regulatory data ingestion pipelines.",
+      "Orchestrated cloud migrations from legacy on-prem systems to Azure Delta Lake, integrating AWS S3, MariaDB, and SharePoint.",
+      "Implemented CI/CD workflows using GitHub Actions for data microservices and monitored them via Azure App Insights.",
+      "Built full stack internal dashboards using React and Node.js to visualize pipeline status, error tracking, and metadata lineage.",
+      "Collaborated with product managers, data scientists, and DevOps to deliver robust APIs, reduce tech debt, and scale AI-driven workflows.",
     ],
   },
   {
     logo: InfosysLogo,
     company: "Infosys",
     role: "Technology Analyst",
-    dates: "Jul 2016 – Dec 2021",
+    dates: "June 2018 – Jan 2022",
     responsibilities: [
-      "Developed scalable data warehousing solutions for finance clients using SQL Server and Informatica.",
-      "Optimized report automation processes, saving 350+ hours monthly.",
-      "Managed a team of 4 developers in agile delivery of analytics dashboards.",
-      "Delivered business intelligence solutions for US-based banking clients.",
+      "Designed and maintained enterprise ETL workflows using Python, SQL, HiveQL, and Apache Sqoop to support multi-country financial operations.",
+      "Developed REST APIs and dashboards using Flask and JavaScript (NVD3.js), enabling real-time monitoring of telecom order processing.",
+      "Implemented batch data pipelines using Hadoop, Hive, and Oozie for millions of daily records across structured and semi-structured formats.",
+      "Migrated datasets from on-prem SQL servers to Azure for a U.S. banking client, improving query times and report delivery SLAs.",
+      "Led a team of 4 developers to deliver agile analytics projects under tight deadlines, using JIRA and Toyota Kata methodology.",
+      "Collaborated on the Tails Dashboard for British Telecom to visualize root causes of order delays, reducing escalations by 35%.",
+      "Designed SQL logic and backend workflows to support fraud analytics, churn prediction, and customer segmentation pipelines.",
+      "Wrote Linux shell scripts for scheduled data jobs, log cleanups, and batch file integrations across distributed data systems.",
     ],
   },
 ];
+
+
 
 export default function Experience() {
   return (
