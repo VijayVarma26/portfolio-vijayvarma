@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import IONLogo from "../assets/ION_Group.svg";
 import InfosysLogo from "../assets/InfosysLogo.png";
@@ -33,13 +34,17 @@ export default function Experience() {
   return (
     <motion.section
       id="experience"
-      className="section py-20 px-6 md:px-24 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100"
+      className="relative py-20 bg-gradient-to-br from-white via-blue-50 to-cyan-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-gray-800 dark:text-gray-100"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ delay: 0.3 }}
       viewport={{ once: true }}
     >
-      <h2 className="text-3xl font-bold mb-14 text-blue-600 dark:text-cyan-400">
+      {/* Background Glow Elements */}
+      <div className="absolute -top-24 -left-24 w-96 h-96 bg-cyan-400 opacity-20 rounded-full blur-3xl z-0"></div>
+      <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-purple-500 opacity-20 rounded-full blur-3xl z-0"></div>
+    <div className="max-w-screen-xl mx-auto px-6 md:px-8 lg:px-12 z-10 relative"></div>
+      <h2 className="text-4xl font-extrabold mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">
         💼 Experience
       </h2>
 
@@ -81,7 +86,7 @@ export default function Experience() {
             </div>
           </motion.div>
         ))}
-      </div>
+      </div>  
     </motion.section>
   );
 }
