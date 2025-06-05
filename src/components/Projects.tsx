@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import AiWebCrawlerImage from "../assets/Project_Image_AI_Web_Crawler.png";
+import EcmIpoImage from "../assets/Projet_Image_ECM_IPO.png";
 
 const projects = [
   {
     title: "AI-Powered Web Crawler for Lead Generation",
     description:
       "Developed an LLM-based crawler to extract and generate 110K+ verified business leads, increasing outreach efficiency by 12% in a quarter.",
-    image: "/images/web-crawler.jpg",
+    image: AiWebCrawlerImage,
     details:
       "This solution used Python-based scraping combined with GPT-4 Turbo via Promptflow to extract structured lead data from company websites, business directories, and global databases. Leads were filtered using vector similarity (OpenAI embeddings) and scored for quality. All data was stored in CosmosDB, and QA teams could monitor results via a React-based internal dashboard. The system ran on a CRON schedule, orchestrated via AKS and Azure Functions, supporting periodic refresh and deduplication routines.",
     techStack: [
@@ -25,7 +27,7 @@ const projects = [
     title: "LLM-Powered ECM IPO Deal Automation",
     description:
       "Reduced IPO deal processing time from 2.5 hours to under 3 minutes using LLM automation integrated with Azure infrastructure.",
-    image: "/images/ipo-automation.jpg",
+    image: EcmIpoImage,
     details:
       "Built a Promptflow-based pipeline to extract structured fields from unstructured ECM IPO documents (emails, PDFs). Used GPT-4 Turbo with robust prompt engineering and schema validation (via Pydantic) to ensure data integrity. The solution pushed extracted data to Dealogic through a FastAPI microservice hosted on AKS. Implemented a RAG-enhanced fallback with PostgreSQL to handle edge cases and model limitations, achieving over 97% data accuracy across 500+ real-world IPOs.",
     techStack: [
