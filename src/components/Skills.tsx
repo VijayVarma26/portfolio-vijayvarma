@@ -68,7 +68,7 @@ export default function Skills() {
       transition={{ delay: 0.2 }}
       viewport={{ once: true }}
     >
-      {/* Floating Background */}
+      {/* Floating Background Elements */}
       <div className="absolute top-[-5rem] left-[-5rem] w-96 h-96 bg-cyan-400 opacity-20 rounded-full blur-3xl"></div>
       <div className="absolute bottom-[-5rem] right-[-5rem] w-96 h-96 bg-purple-500 opacity-20 rounded-full blur-3xl"></div>
 
@@ -77,31 +77,24 @@ export default function Skills() {
           🛠️ Technical Skills
         </h2>
 
-        <div className="space-y-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {Object.entries(categorizedSkills).map(([category, skills]) => (
             <div key={category}>
-              <h3 className="text-2xl font-semibold text-gray-700 dark:text-gray-300 mb-6">
+              <h3 className="text-lg font-semibold text-center text-gray-700 dark:text-gray-300 mb-4">
                 {category}
               </h3>
-
-              <ul className="flex flex-wrap gap-4">
+              <ul className="flex flex-wrap justify-center gap-2">
                 {skills.map((skill) => (
                   <motion.li
                     key={skill.name}
-                    whileHover={{ y: -3, scale: 1.04 }}
+                    whileHover={{ y: -2, scale: 1.03 }}
                     transition={{ type: "spring", stiffness: 300 }}
-                    className="group relative overflow-hidden flex items-center gap-2 px-4 py-2 rounded-xl bg-white/60 dark:bg-white/10 backdrop-blur-md border border-gray-200/40 dark:border-white/10 shadow-md hover:shadow-lg hover:border-cyan-400 dark:hover:border-cyan-500 transition duration-300 min-w-[130px]"
+                    className="group relative flex items-center gap-1 px-3 py-1.5 rounded-lg bg-white/50 dark:bg-white/10 border border-gray-200/40 dark:border-white/10 shadow-sm hover:shadow-md hover:border-cyan-400 dark:hover:border-cyan-500 transition text-sm min-w-[100px]"
                   >
-                    {/* Glow */}
-                    <div className="absolute -left-4 -top-4 w-20 h-20 bg-cyan-300/10 dark:bg-cyan-400/10 blur-2xl rounded-full group-hover:animate-pulse z-0"></div>
-
-                    {/* Icon */}
-                    <span className="text-lg text-cyan-600 dark:text-cyan-400 relative z-10">
+                    <span className="text-cyan-600 dark:text-cyan-400">
                       {skill.icon}
                     </span>
-
-                    {/* Label */}
-                    <span className="text-sm font-medium text-gray-900 dark:text-white relative z-10">
+                    <span className="text-gray-900 dark:text-white">
                       {skill.name}
                     </span>
                   </motion.li>
