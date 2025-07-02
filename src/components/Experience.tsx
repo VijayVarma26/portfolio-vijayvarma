@@ -41,7 +41,6 @@ const experiences = [
 ];
 
 
-
 export default function Experience() {
   return (
     <motion.section

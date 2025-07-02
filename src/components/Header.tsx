@@ -13,21 +13,36 @@ export default function Header() {
     document.documentElement.classList.toggle("dark", !darkMode);
   };
 
-  const navItems = ["about", "skills", "projects", "contact"];
+  const navItems = ["about", "skills", "projects", "experience","contact"];
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + 100;
-      for (const id of navItems) {
-        const section = document.getElementById(id);
-        if (section && section.offsetTop <= scrollPosition) {
-          setActiveSection(id);
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+    let closestSection = null;
+    let minDistance = Infinity;
+
+    for (const id of navItems) {
+      const section = document.getElementById(id);
+      if (section) {
+        const distance = Math.abs(section.offsetTop - scrollPosition);
+        if (distance < minDistance) {
+          closestSection = id;
+          minDistance = distance;
         }
       }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    }
+
+    if (closestSection) {
+      setActiveSection(closestSection);
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  handleScroll(); // trigger once on mount
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
 
   return (
     <motion.header
