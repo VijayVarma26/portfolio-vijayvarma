@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import AiWebCrawlerImage from "../assets/Project_Image_AI_Web_Crawler_New.png";
 import EcmIpoImage from "../assets/Projet_Image_ECM_IPO.png";
+import SuvFortuneVisionImage from "../assets/suv_fortune_vision.jpg";
 
 const projects = [
   {
@@ -75,6 +76,24 @@ const projects = [
       "Azure Logic Apps",
     ],
   },
+  {
+  title: "SUV Fortune Vision Website",
+  description:
+    "Developed a dynamic and visually engaging company website to showcase the journey, services, clients, and team of SUV Fortune Vision, a leading digital media firm.",
+  image: SuvFortuneVisionImage,
+  details:
+    "Built a fully responsive and animated website using React and Tailwind CSS for SUV Fortune Vision. Incorporated `framer-motion` for smooth entrance animations and interactive transitions across sections. Designed reusable React components to highlight the company’s journey, core leadership team, and success stories. Used `recharts` to visualize follower growth, and Swiper.js for showcasing partners and campaigns. The site emphasizes storytelling, brand personality, and user engagement, making it a modern digital portfolio for the company. Optimized for accessibility and mobile responsiveness. Deployed seamlessly using Vercel for fast global delivery and CI/CD.",
+  techStack: [
+    "React",
+    "Tailwind CSS",
+    "Framer Motion",
+    "Lucide React Icons",
+    "Recharts",
+    "Swiper.js",
+    "Vercel"
+  ],
+  liveDemo: "https://suv-fortune-vision.vercel.app"
+}  ,
 ];
 
 
