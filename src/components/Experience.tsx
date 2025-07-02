@@ -3,7 +3,9 @@ import { motion } from "framer-motion";
 import IONLogo from "../assets/ION_Group.svg";
 import InfosysLogo from "../assets/InfosysLogo.png";
 
-const experiences = [
+
+export default function Experience() {
+  const experiences = [
   {
     logo: IONLogo,
     company: "ION Analytics",
@@ -41,11 +43,10 @@ const experiences = [
 ];
 
 
-export default function Experience() {
   return (
     <motion.section
       id="experience"
-      className="relative py-20 bg-gradient-to-br from-white via-blue-50 to-cyan-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-gray-800 dark:text-gray-100"
+      className="relative py-24 px-6 md:px-16 bg-gradient-to-br from-white via-blue-50 to-cyan-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-gray-800 dark:text-gray-100"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ delay: 0.3 }}
@@ -54,50 +55,49 @@ export default function Experience() {
       {/* Background Glow Elements */}
       <div className="absolute -top-24 -left-24 w-96 h-96 bg-cyan-400 opacity-20 rounded-full blur-3xl z-0"></div>
       <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-purple-500 opacity-20 rounded-full blur-3xl z-0"></div>
-    <div className="max-w-screen-xl mx-auto px-6 md:px-8 lg:px-12 z-10 relative"></div>
-      <h2 className="text-4xl font-extrabold mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">
-        💼 Experience
-      </h2>
 
-      <div className="relative border-l-4 border-cyan-400 dark:border-cyan-500 pl-8 space-y-16">
-        {experiences.map(({ logo, company, role, dates, responsibilities }, index) => (
-          <motion.div
-            key={company}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: index * 0.2 }}
-            className="relative flex gap-6"
-          >
-            {/* Timeline Dot with Logo */}
-            <div className="absolute -left-14 top-6 w-16 h-16 rounded-full bg-white shadow-md flex items-center justify-center ring-2 ring-gray-200 dark:ring-gray-700">
-              <img
-                src={logo}
-                alt={`${company} Logo`}
-                className="w-10 h-10 object-contain"
-              />
-            </div>
-            {/* Experience Card */}
-            <div className="flex-1 bg-white dark:bg-gray-800/80 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg p-8">
-              <div className="flex flex-col md:flex-row md:justify-between mb-4">
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
-                  {role}
-                </h3>
-                <span className="text-sm text-gray-500 dark:text-gray-400 mt-2 md:mt-0">
-                  {dates}
-                </span>
+      <div className="max-w-5xl mx-auto z-10 relative">
+        <h2 className="text-4xl font-extrabold mb-16 text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">
+          💼 Experience
+        </h2>
+
+        <div className="relative border-l-[3px] border-cyan-300 dark:border-cyan-500 pl-8 space-y-20">
+          {experiences.map(({ logo, company, role, dates, responsibilities }, index) => (
+            <motion.div
+              key={company}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              className="relative group"
+            >
+              {/* Timeline Dot */}
+              <div className="absolute -left-[34px] top-2 w-7 h-7 rounded-full bg-white dark:bg-gray-900 border-[3px] border-cyan-400 dark:border-cyan-500 shadow-md flex items-center justify-center">
+                <img src={logo} alt={`${company} logo`} className="w-4 h-4 object-contain" />
               </div>
-              <h4 className="text-lg text-blue-600 dark:text-cyan-400 font-semibold mb-4">
-                {company}
-              </h4>
-              <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300 text-base">
-                {responsibilities.map((item, idx) => (
-                  <li key={idx}>{item}</li>
-                ))}
-              </ul>
-            </div>
-          </motion.div>
-        ))}
-      </div>  
+
+              {/* Card */}
+              <div className="bg-white dark:bg-gray-800/90 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-md p-6 md:p-8 transition-transform duration-300 group-hover:scale-[1.015]">
+                <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-3">
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
+                    {role}
+                  </h3>
+                  <span className="text-sm text-gray-500 dark:text-gray-400 mt-2 md:mt-0">
+                    {dates}
+                  </span>
+                </div>
+                <h4 className="text-lg font-semibold text-blue-600 dark:text-cyan-400 mb-4">
+                  {company}
+                </h4>
+                <ul className="list-disc pl-5 space-y-2 text-gray-700 dark:text-gray-300 text-base">
+                  {responsibilities.map((item, idx) => (
+                    <li key={idx}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
     </motion.section>
   );
 }
