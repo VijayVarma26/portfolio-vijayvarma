@@ -72,7 +72,7 @@ export default function Experience() {
                 {/* Timeline Dot */}
                 <div
                   className="absolute -left-14 top-4 w-20 h-20 rounded-full z-10 
-                bg-white dark:bg-gray-100 
+                bg-white dark:bg-gray-10 
                 border-[3px] border-cyan-400 dark:border-cyan-500 
                 shadow-md flex items-center justify-center"
                 >
