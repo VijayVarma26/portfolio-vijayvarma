@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import AiWebCrawlerImage from "../assets/Project_Image_AI_Web_Crawler.png";
+import AiWebCrawlerImage from "../assets/Project_Image_AI_Web_Crawler_New.png";
 import EcmIpoImage from "../assets/Projet_Image_ECM_IPO.png";
 
 const projects = [
