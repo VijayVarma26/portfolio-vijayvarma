@@ -92,8 +92,8 @@ const projects = [
     "Swiper.js",
     "Vercel"
   ],
-  liveDemo: "https://suv-fortune-vision.vercel.app"
-}  ,
+  liveDemo: "https://suvfortunevision.com"
+},
 ];
 
 export default function Projects() {
