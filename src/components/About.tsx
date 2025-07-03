@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import profileImage from "../assets/ION_Group.svg";
+import profileImage from "../assets/profile_picture_place_holder.jpg";
 
 export default function About() {
   return (
