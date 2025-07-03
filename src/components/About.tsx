@@ -23,11 +23,10 @@ export default function About() {
           <div className="relative group">
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-cyan-400 to-blue-500 opacity-10 group-hover:opacity-30 transition-all duration-300 blur-lg z-0" />
             <img
-  src={profileImage}
-  alt="Vijay Varma"
-  className="w-52 h-64 md:w-64 md:h-80 rounded-2xl object-cover shadow-xl border-4 border-cyan-500 transition-transform group-hover:scale-105"
-/>
-
+              src={profileImage}
+              alt="Vijay Varma"
+              className="w-52 h-64 md:w-64 md:h-80 rounded-2xl object-cover shadow-xl border-4 border-cyan-500 transition-transform group-hover:scale-105"
+            />
           </div>
         </motion.div>
 
