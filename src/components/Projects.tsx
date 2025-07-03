@@ -82,7 +82,7 @@ const projects = [
     "Developed a dynamic and visually engaging company website to showcase the journey, services, clients, and team of SUV Fortune Vision, a leading digital media firm.",
   image: SuvFortuneVisionImage,
   details:
-    "Built a fully responsive and animated website using React and Tailwind CSS for SUV Fortune Vision. Incorporated `framer-motion` for smooth entrance animations and interactive transitions across sections. Designed reusable React components to highlight the company’s journey, core leadership team, and success stories. Used `recharts` to visualize follower growth, and Swiper.js for showcasing partners and campaigns. The site emphasizes storytelling, brand personality, and user engagement, making it a modern digital portfolio for the company. Optimized for accessibility and mobile responsiveness. Deployed seamlessly using Vercel for fast global delivery and CI/CD.",
+    "Built a fully responsive and animated website using React and Tailwind CSS for SUV Fortune Vision. Incorporated framer-motion for smooth entrance animations and interactive transitions across sections. Designed reusable React components to highlight the company’s journey, core leadership team, and success stories. Used recharts to visualize follower growth, and Swiper.js for showcasing partners and campaigns. The site emphasizes storytelling, brand personality, and user engagement, making it a modern digital portfolio for the company. Optimized for accessibility and mobile responsiveness. Deployed seamlessly using Vercel for fast global delivery and CI/CD.",
   techStack: [
     "React",
     "Tailwind CSS",
@@ -96,126 +96,121 @@ const projects = [
 }  ,
 ];
 
-
-
 export default function Projects() {
   const [activeProject, setActiveProject] = useState(null);
 
   return (
     <motion.section
-  id="projects"
-  className="relative py-20 bg-gradient-to-br from-white via-blue-50 to-cyan-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-gray-800 dark:text-gray-100"
-  initial={{ opacity: 0 }}
-  whileInView={{ opacity: 1 }}
-  transition={{ delay: 0.2 }}
-  viewport={{ once: true }}
->
-  {/* Background Glow Elements */}
-  <div className="absolute -top-24 -left-24 w-96 h-96 bg-cyan-400 opacity-20 rounded-full blur-3xl z-0"></div>
-  <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-purple-500 opacity-20 rounded-full blur-3xl z-0"></div>
+      id="projects"
+      className="relative py-20 bg-gradient-to-br from-white via-blue-50 to-cyan-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-gray-800 dark:text-gray-100"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ delay: 0.2 }}
+      viewport={{ once: true }}
+    >
+      {/* Background Glow Elements */}
+      <div className="absolute -top-24 -left-24 w-96 h-96 bg-cyan-400 opacity-20 rounded-full blur-3xl z-0"></div>
+      <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-purple-500 opacity-20 rounded-full blur-3xl z-0"></div>
 
-  <div className="max-w-screen-xl mx-auto px-6 md:px-8 lg:px-12 z-10 relative">
-    <h2 className="text-4xl font-extrabold mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">
-      📂 Featured Projects
-    </h2>
+      <div className="max-w-screen-xl mx-auto px-6 md:px-8 lg:px-12 z-10 relative">
+        <h2 className="text-4xl font-extrabold mb-16 text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">
+          📂 Featured Projects
+        </h2>
 
-    <div className="grid md:grid-cols-2 gap-10">
-      {projects.map((proj, index) => (
-        <motion.div
-          key={proj.title}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: index * 0.2 }}
-          onClick={() => setActiveProject(proj)}
-          className="cursor-pointer group relative overflow-hidden bg-white/60 dark:bg-white/10 backdrop-blur-md rounded-2xl shadow-md hover:shadow-xl border border-gray-200/40 dark:border-white/10 transition"
-        >
-          {/* Updated image style — will fit perfectly */}
-          <img
-            src={proj.image}
-            alt={proj.title}
-            className="w-full aspect-video object-contain p-2 bg-white rounded-t-2xl"
-          />
-
-          <div className="p-5">
-            <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
-              {proj.title}
-            </h3>
-            <p className="text-sm text-gray-700 dark:text-gray-300">
-              {proj.description}
-            </p>
-          </div>
-        </motion.div>
-      ))}
-    </div>
-
-    {/* Modal Overlay */}
-    {activeProject && (
-      <div className="fixed inset-0 z-50 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center p-4">
-        <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl max-w-3xl w-full overflow-hidden relative">
-          {/* Close Button */}
-          <button
-            onClick={() => setActiveProject(null)}
-            className="absolute top-4 right-4 text-gray-500 dark:text-gray-300 hover:text-red-500 text-2xl"
-          >
-            &times;
-          </button>
-
-          {/* Modal Image — also updated to avoid cropping */}
-          <img
-            src={activeProject.image}
-            alt={activeProject.title}
-            className="w-full aspect-video object-contain p-4 bg-white rounded-t-2xl"
-          />
-
-          {/* Content */}
-          <div className="p-6 space-y-6">
-            {/* Project Title */}
-            <h3 className="text-2xl font-bold text-blue-600 dark:text-cyan-400">
-              {activeProject.title}
-            </h3>
-
-            {/* Description */}
-            <div>
-              <h4 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-1">
-                📌 Description
-              </h4>
-              <p className="text-sm text-gray-800 dark:text-gray-100 leading-relaxed">
-                {activeProject.description}
-              </p>
-            </div>
-
-            {/* Detailed Highlights */}
-            <div>
-              <h4 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-1">
-                🧩 Project Highlights
-              </h4>
-              <p className="text-sm text-gray-700 dark:text-gray-200 leading-relaxed whitespace-pre-line">
-                {activeProject.details}
-              </p>
-            </div>
-
-            {/* Tech Stack */}
-            <div>
-              <h4 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-1">
-                ⚙️ Tech Stack
-              </h4>
-              <div className="flex flex-wrap gap-2 mt-2">
-                {activeProject.techStack?.map((tech, index) => (
-                  <span
-                    key={index}
-                    className="bg-blue-100 dark:bg-cyan-800 text-blue-800 dark:text-white text-xs font-medium px-3 py-1 rounded-full shadow-sm"
-                  >
-                    {tech}
-                  </span>
-                ))}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((proj, index) => (
+            <motion.div
+              key={proj.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              onClick={() => setActiveProject(proj)}
+              className="cursor-pointer group bg-white/60 dark:bg-white/10 backdrop-blur-md rounded-2xl shadow-md hover:shadow-2xl border border-gray-200/40 dark:border-white/10 transition overflow-hidden"
+            >
+              <div className="relative">
+                <img
+                  src={proj.image}
+                  alt={proj.title}
+                  className="w-full aspect-video object-cover rounded-t-2xl"
+                />
               </div>
-            </div>
-          </div>
+              <div className="p-5">
+                <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
+                  {proj.title}
+                </h3>
+                <p className="text-sm text-gray-700 dark:text-gray-300 line-clamp-3">
+                  {proj.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
         </div>
-      </div>
-    )}
-  </div>
-</motion.section>
 
+        {/* Modal Overlay */}
+        {activeProject && (
+          <div className="fixed inset-0 z-[1000] bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center p-4">
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl max-w-4xl w-full overflow-y-auto max-h-[90vh] relative"
+            >
+              <button
+                onClick={() => setActiveProject(null)}
+                className="absolute top-4 right-4 text-gray-500 dark:text-gray-300 hover:text-red-500 text-2xl"
+              >
+                &times;
+              </button>
+
+              <img
+                src={activeProject.image}
+                alt={activeProject.title}
+                className="w-full aspect-video object-cover rounded-t-2xl"
+              />
+
+              <div className="p-6 space-y-6">
+                <h3 className="text-2xl font-bold text-blue-600 dark:text-cyan-400">
+                  {activeProject.title}
+                </h3>
+
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-1">
+                    📌 Description
+                  </h4>
+                  <p className="text-sm text-gray-800 dark:text-gray-100 leading-relaxed">
+                    {activeProject.description}
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-1">
+                    🧩 Project Highlights
+                  </h4>
+                  <p className="text-sm text-gray-700 dark:text-gray-200 leading-relaxed whitespace-pre-line">
+                    {activeProject.details}
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-1">
+                    ⚙️ Tech Stack
+                  </h4>
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    {activeProject.techStack?.map((tech, index) => (
+                      <span
+                        key={index}
+                        className="bg-blue-100 dark:bg-cyan-800 text-blue-800 dark:text-white text-xs font-medium px-3 py-1 rounded-full shadow-sm"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </div>
+    </motion.section>
   );
 }
