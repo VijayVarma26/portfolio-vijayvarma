@@ -4,6 +4,8 @@ import AiWebCrawlerImage from "../assets/Project_Image_AI_Web_Crawler_New.png";
 import EcmIpoImage from "../assets/Projet_Image_ECM_IPO.png";
 import SuvFortuneVisionImage from "../assets/suv_fortune_vision.jpg";
 import PepAndPoiImage from "../assets/PEP_Data_Pipeline.png";
+import PickleballDashboardImage from "../assets/PickleballDashboard.jpg";
+import MnaLeagueTableImage from "../assets/MNA_League_Table.png";
 
 const projects = [
   {
@@ -47,7 +49,7 @@ const projects = [
     title: "M&A League Table Sync Pipeline",
     description:
       "Built a high-volume pipeline to reconcile 1.25M+ M&A deals between Mergermarket and Dealogic, improving advisor recognition and report accuracy.",
-    image: "/images/league-table.jpg",
+    image: MnaLeagueTableImage,
     details:
       "This PySpark-based pipeline was developed on Azure Databricks to align fields across large datasets with financial and deal metadata. Data sources included SharePoint dumps and MariaDB tables. The pipeline added multi-level validation logic, schema reconciliation, and delta-based change tracking. League Table positions were updated live, improving visibility for 2M+ advisors and 4.3M+ individuals. The solution integrated CI/CD using GitHub Actions and published data to dashboards and reports consumed company-wide.",
     techStack: [
@@ -99,7 +101,7 @@ const projects = [
   title: "Mumbai Pickleball Trend Analysis",
   description:
     "Analyzed the growth and revenue trends of Pickleball venues across Mumbai by scraping and visualizing booking data over a two-year period.",
-  image: null,
+  image: PickleballDashboardImage,
   details:
     "Built a comprehensive data pipeline to track Pickleball activity trends in Mumbai. Web scraped venue and booking data from Hudle over the last two years using Python and Selenium. Designed a daily scraping scheduler and modeled the data into a structured format for long-term analysis. Created an interactive Power BI dashboard that visualized venue popularity by region, time of day, and weekday patterns. Special focus was placed on revenue estimation and location-wise performance. The insights empowered stakeholders to make informed decisions on pricing, identifying high-performing zones, and selecting optimal locations for opening new venues.",
   techStack: [
