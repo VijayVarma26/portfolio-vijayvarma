@@ -80,46 +80,46 @@ const projects = [
     ],
   },
   {
-  title: "SUV Fortune Vision Website",
-  description:
-    "Developed a dynamic and visually engaging company website to showcase the journey, services, clients, and team of SUV Fortune Vision, a leading digital media firm.",
-  image: SuvFortuneVisionImage,
-  details:
-    "Built a fully responsive and animated website using React and Tailwind CSS for SUV Fortune Vision. Incorporated framer-motion for smooth entrance animations and interactive transitions across sections. Designed reusable React components to highlight the company’s journey, core leadership team, and success stories. Used recharts to visualize follower growth, and Swiper.js for showcasing partners and campaigns. The site emphasizes storytelling, brand personality, and user engagement, making it a modern digital portfolio for the company. Optimized for accessibility and mobile responsiveness. Deployed seamlessly using Vercel for fast global delivery and CI/CD.",
-  techStack: [
-    "React",
-    "Tailwind CSS",
-    "Framer Motion",
-    "Lucide React Icons",
-    "Recharts",
-    "Swiper.js",
-    "Vercel"
-  ],
-  liveDemo: "https://suvfortunevision.com"
-},
-{
-  title: "Mumbai Pickleball Trend Analysis",
-  description:
-    "Analyzed the growth and revenue trends of Pickleball venues across Mumbai by scraping and visualizing booking data over a two-year period.",
-  image: PickleballDashboardImage,
-  details:
-    "Built a comprehensive data pipeline to track Pickleball activity trends in Mumbai. Web scraped venue and booking data from Hudle over the last two years using Python and Selenium. Designed a daily scraping scheduler and modeled the data into a structured format for long-term analysis. Created an interactive Power BI dashboard that visualized venue popularity by region, time of day, and weekday patterns. Special focus was placed on revenue estimation and location-wise performance. The insights empowered stakeholders to make informed decisions on pricing, identifying high-performing zones, and selecting optimal locations for opening new venues.",
-  techStack: [
-    "Python",
-    "Selenium",
-    "Web Scraping",
-    "Data Modelling",
-    "Power BI"
-  ],
-  liveDemo: null
-},
+    title: "SUV Fortune Vision Website",
+    description:
+      "Developed a dynamic and visually engaging company website to showcase the journey, services, clients, and team of SUV Fortune Vision, a leading digital media firm.",
+    image: SuvFortuneVisionImage,
+    details:
+      "Built a fully responsive and animated website using React and Tailwind CSS for SUV Fortune Vision. Incorporated framer-motion for smooth entrance animations and interactive transitions across sections. Designed reusable React components to highlight the company’s journey, core leadership team, and success stories. Used recharts to visualize follower growth, and Swiper.js for showcasing partners and campaigns. The site emphasizes storytelling, brand personality, and user engagement, making it a modern digital portfolio for the company. Optimized for accessibility and mobile responsiveness. Deployed seamlessly using Vercel for fast global delivery and CI/CD.",
+    techStack: [
+      "React",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Lucide React Icons",
+      "Recharts",
+      "Swiper.js",
+      "Vercel",
+    ],
+    liveDemo: "https://suvfortunevision.com",
+  },
+  {
+    title: "Mumbai Pickleball Trend Analysis",
+    description:
+      "Analyzed the growth and revenue trends of Pickleball venues across Mumbai by scraping and visualizing booking data over a two-year period.",
+    image: PickleballDashboardImage,
+    details:
+      "Built a comprehensive data pipeline to track Pickleball activity trends in Mumbai. Web scraped venue and booking data from Hudle over the last two years using Python and Selenium. Designed a daily scraping scheduler and modeled the data into a structured format for long-term analysis. Created an interactive Power BI dashboard that visualized venue popularity by region, time of day, and weekday patterns. Special focus was placed on revenue estimation and location-wise performance. The insights empowered stakeholders to make informed decisions on pricing, identifying high-performing zones, and selecting optimal locations for opening new venues.",
+    techStack: [
+      "Python",
+      "Selenium",
+      "Web Scraping",
+      "Data Modelling",
+      "Power BI",
+    ],
+    liveDemo: null,
+  },
 ];
 
 export default function Projects() {
   const [activeProject, setActiveProject] = useState(null);
-useEffect(() => {
-  document.body.style.overflow = activeProject ? "hidden" : "auto";
-}, [activeProject]);
+  useEffect(() => {
+    document.body.style.overflow = activeProject ? "hidden" : "auto";
+  }, [activeProject]);
   return (
     <motion.section
       id="projects"
@@ -169,7 +169,7 @@ useEffect(() => {
 
         {/* Modal Overlay */}
         {activeProject && (
-<div className="fixed inset-0 z-[9999] bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="fixed inset-0 z-[9999] bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center p-4">
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
