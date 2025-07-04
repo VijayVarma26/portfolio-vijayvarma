@@ -171,48 +171,57 @@ export default function Projects() {
         {activeProject && (
           <div className="fixed inset-0 z-[9999] bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center p-4">
             <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
+              initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl max-w-4xl w-full overflow-y-auto max-h-[90vh] relative"
+              className="bg-white dark:bg-gray-900 rounded-3xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-hidden relative"
             >
+              {/* Close Button */}
               <button
                 onClick={() => setActiveProject(null)}
-                className="absolute top-4 right-4 text-gray-500 dark:text-gray-300 hover:text-red-500 text-2xl"
+                className="absolute top-4 right-4 text-gray-500 dark:text-gray-300 hover:text-red-500 text-3xl z-10"
               >
                 &times;
               </button>
 
-              <img
-                src={activeProject.image}
-                alt={activeProject.title}
-                className="w-full aspect-video object-cover rounded-t-2xl"
-              />
+              {/* Image */}
+              <div className="w-full aspect-[16/9]">
+                <img
+                  src={activeProject.image}
+                  alt={activeProject.title}
+                  className="w-full h-full object-cover rounded-t-3xl"
+                />
+              </div>
 
-              <div className="p-6 space-y-6">
+              {/* Modal Content */}
+              <div className="p-6 space-y-6 overflow-y-auto max-h-[calc(90vh-16rem)]">
+                {/* Title */}
                 <h3 className="text-2xl font-bold text-blue-600 dark:text-cyan-400">
                   {activeProject.title}
                 </h3>
 
-                <div>
+                {/* Description */}
+                <section>
                   <h4 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     📌 Description
                   </h4>
                   <p className="text-sm text-gray-800 dark:text-gray-100 leading-relaxed">
                     {activeProject.description}
                   </p>
-                </div>
+                </section>
 
-                <div>
+                {/* Highlights */}
+                <section>
                   <h4 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     🧩 Project Highlights
                   </h4>
                   <p className="text-sm text-gray-700 dark:text-gray-200 leading-relaxed whitespace-pre-line">
                     {activeProject.details}
                   </p>
-                </div>
+                </section>
 
-                <div>
+                {/* Tech Stack */}
+                <section>
                   <h4 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     ⚙️ Tech Stack
                   </h4>
@@ -226,7 +235,7 @@ export default function Projects() {
                       </span>
                     ))}
                   </div>
-                </div>
+                </section>
               </div>
             </motion.div>
           </div>
