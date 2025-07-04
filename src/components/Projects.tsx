@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import AiWebCrawlerImage from "../assets/Project_Image_AI_Web_Crawler_New.png";
 import EcmIpoImage from "../assets/Projet_Image_ECM_IPO.png";
 import SuvFortuneVisionImage from "../assets/suv_fortune_vision.jpg";
+import PepAndPoiImage from "../assets/PEP_Data_Pipeline.png";
 
 const projects = [
   {
@@ -63,7 +64,7 @@ const projects = [
     title: "Automated PEP & Sanctions Data Pipeline",
     description:
       "Scraped 50+ regulatory and watchlist sources globally to automate KYC updates and improve real-time risk monitoring.",
-    image: "/images/pep-sanctions.jpg",
+    image: PepAndPoiImage,
     details:
       "Designed and deployed a distributed web crawler system to aggregate data from sources such as OFAC, Interpol, SEC, and EU Sanctions lists. Used Selenium and Python scripts within Azure Databricks to perform scraping, cleaning, and enrichment. The processed data was stored in MySQL and blob storage, while the front-end alert system used Azure App Insights and Logic Apps to notify compliance analysts of critical matches. Reduced manual KYC review effort by 400+ hours per week and improved compliance latency.",
     techStack: [
@@ -94,6 +95,22 @@ const projects = [
   ],
   liveDemo: "https://suvfortunevision.com"
 },
+{
+  title: "Mumbai Pickleball Trend Analysis",
+  description:
+    "Analyzed the growth and revenue trends of Pickleball venues across Mumbai by scraping and visualizing booking data over a two-year period.",
+  image: null,
+  details:
+    "Built a comprehensive data pipeline to track Pickleball activity trends in Mumbai. Web scraped venue and booking data from Hudle over the last two years using Python and Selenium. Designed a daily scraping scheduler and modeled the data into a structured format for long-term analysis. Created an interactive Power BI dashboard that visualized venue popularity by region, time of day, and weekday patterns. Special focus was placed on revenue estimation and location-wise performance. The insights empowered stakeholders to make informed decisions on pricing, identifying high-performing zones, and selecting optimal locations for opening new venues.",
+  techStack: [
+    "Python",
+    "Selenium",
+    "Web Scraping",
+    "Data Modelling",
+    "Power BI"
+  ],
+  liveDemo: null
+},
 ];
 
 export default function Projects() {
@@ -113,7 +130,7 @@ export default function Projects() {
       <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-purple-500 opacity-20 rounded-full blur-3xl z-0"></div>
 
       <div className="max-w-screen-xl mx-auto px-6 md:px-8 lg:px-12 z-10 relative">
-        <h2 className="text-4xl font-extrabold mb-16 text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">
+        <h2 className="text-center text-4xl font-serif mb-16 bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">
           📂 Featured Projects
         </h2>
 

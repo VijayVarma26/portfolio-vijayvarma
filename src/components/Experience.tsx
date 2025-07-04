@@ -55,7 +55,7 @@ export default function Experience() {
       <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-purple-500 opacity-20 rounded-full blur-3xl z-0"></div>
 
       <div className="max-w-5xl mx-auto z-10 relative">
-        <h2 className="text-4xl font-extrabold mb-16 text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">
+        <h2 className="text-center text-4xl font-serif mb-16 bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">
           💼 Experience
         </h2>
 

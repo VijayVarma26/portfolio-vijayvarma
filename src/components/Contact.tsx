@@ -16,7 +16,7 @@ export default function Contact() {
       <div className="absolute -bottom-16 right-10 w-96 h-96 bg-purple-500 opacity-20 rounded-full blur-3xl z-0" />
 
       <div className="max-w-xl mx-auto px-6 relative z-10 text-center">
-        <h2 className="text-4xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">
+        <h2 className="text-center text-4xl font-serif mb-16 bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">
           📬 Let’s Connect
         </h2>
         <p className="text-gray-600 dark:text-gray-300 mb-8">
